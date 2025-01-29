@@ -1,3 +1,29 @@
 = Netburen
 
-#TODO#.
+This data product for EnergyHubs describes which information and data to
+exchange between DSO and customer/advisor when establishing an EnergyHub. A
+minimum set of data is defined that all operators are expected to conform to,
+along with a number of optional properties and data types.
+
+The data is intended to be presented as a hierarchy with a
+xref:schema:class/TopologyDataSet.adoc[`TopologyDataSet`] at its root, then
+xref:schema:class/Substation.adoc[`Substation`]s nested inside the
+TopologyDataSet. A grid connection (*Aansluiting*) is defined as a
+xref:schema:class/MarketEvaluationPoint.adoc[`MarketEvaluationPoint`] and
+related to a xref:schema:class/Bay.adoc[`Bay`] through
+xref:schema:class/EnergyConsumer.adoc[`EnergyConsumer`].
+
+Note that this data product does not take into account usage points, i.e.
+"overdrachtspunten". If an "aansluiting" contains multiple "overdrachtspunten",
+the following applies:
+
+* if all "overdrachtspunten" associated with the "aansluiting" are fed
+from the same `Bay`, only one `MarketEvaluationPoint` is provided;
+* if an "aansluiting" contains multiple "overdrachtspunten" which are fed
+from separate `Bay`s, the `MarketEvaluationPoint` is associated with multiple
+`Bay`s, i.e. duplicated across multiple `EnergyConsumer`s.
+
+== Additional schemas
+
+* xref:schema:attachment$dp_netburen.json_schema.json[JSON schema]
+* xref:schema:example$dp_netburen.example.json[Example instance data]
