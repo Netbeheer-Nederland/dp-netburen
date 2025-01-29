@@ -1,0 +1,7 @@
+_commit: v0.6.5
+_src_path: gh:Netbeheer-Nederland/tmpl-dp
+description: Information models for the Netburen data product.
+name: dp-netburen
+org: Netbeheer-Nederland
+schema_base_uri: http://data.netbeheernederland.nl/data-product
+title: Netburen

@@ -1,0 +1,165 @@
+#set dotenv-required
+#set dotenv-load
+set shell := ["bash", "-uc"]
+set windows-shell := ["bash", "-uc"]
+
+
+
+_default:
+    @just --list --justfile {{ justfile() }}
+
+# Generate all artifacts
+[group("generation")]
+build: clean _post-process-linkml-schema generate-json-schema generate-documentation generate-example-data validate-example-data
+    @echo -en "\t"
+    cp -r "artifacts/information_models" "artifacts/documentation/modules/schema/attachments/"
+    @echo -en "\t"
+    cp -r "artifacts/schemas" "artifacts/documentation/modules/schema/attachments/"
+    @echo -en "\t"
+    cp -r "artifacts/examples" "artifacts/documentation/modules/schema/"
+    @echo -n "… "
+    @echo "OK."
+
+# Post-process LinkML schema for preview or releasing
+[group("generation")]
+_post-process-linkml-schema:
+    mkdir -p "artifacts/information_models"
+    cp "information_models/dp_netburen.schema.linkml.yml" "artifacts/information_models/"
+    sed -i '/^version: .*$/d' "artifacts/information_models/dp_netburen.schema.linkml.yml"
+    @if [ -z ${VERSION:-} ]; then \
+        sed -i "/^name: .*$/a version: $(git rev-parse --abbrev-ref HEAD)" "artifacts/information_models/dp_netburen.schema.linkml.yml"; \
+    else \
+        sed -i "/^name: .*$/a version: ${VERSION}" "artifacts/information_models/dp_netburen.schema.linkml.yml"; \
+    fi
+
+# Generate JSON Schema
+[group("generation")]
+generate-json-schema: _post-process-linkml-schema
+    @echo "Generating JSON Schema…"
+    @echo -en "\t"
+    mkdir -p "artifacts/schemas/json_schema"
+    @echo -en "\t"
+    poetry run gen-json-schema \
+        --not-closed \
+        "artifacts/information_models/dp_netburen.schema.linkml.yml" \
+        > "artifacts/schemas/json_schema/dp_netburen.json_schema.json"
+    @echo -n "… "
+    @echo "OK."
+    @echo
+    @echo -e "Generated JSON Schema at: artifacts/schemas/json_schema/dp_netburen.json_schema.json"
+    @echo
+
+# Generate example data
+[group("generation")]
+generate-example-data: _post-process-linkml-schema
+    @echo "Generating JSON example data…"
+    @echo -en "\t"
+    mkdir -p "artifacts/examples"
+    @echo -en "\t"
+    for example_file in examples/*.yml; do \
+        [ -f "$example_file" ] || continue; \
+        poetry run gen-linkml-profile  \
+            convert \
+            "$example_file" \
+            --out "artifacts/${example_file%.*}.json"; \
+    done
+    @echo -n "… "
+    @echo "OK."
+    @echo
+    @echo -e "Generated example JSON data at: artifacts/examples"
+    @echo
+
+# Validate example data against JSON Schema
+[group("general")]
+validate-example-data: generate-json-schema generate-example-data
+    @echo "Validating example data against JSON schema…"
+    @echo -en "\t"
+    for example_file in artifacts/examples/*.json; do \
+        [ -f "$example_file" ] || continue; \
+        poetry run check-jsonschema --schemafile "artifacts/schemas/json_schema/dp_netburen.json_schema.json" $example_file; \
+    done
+    @echo -n "… "
+    @echo "OK."
+
+# Generate documentation (Antora component)
+[group("generation")]
+generate-documentation: _post-process-linkml-schema
+    @echo "Generating documentation…"
+    @echo -en "\t"
+    cp -r "documentation" "artifacts"
+    @echo -en "\t"
+    mkdir -p "artifacts/documentation/modules/schema"
+    @echo -en "\t"
+    poetry run python -m linkml_asciidoc_generator.main \
+        "artifacts/information_models/dp_netburen.schema.linkml.yml" \
+        "artifacts/documentation/modules/schema"
+    @echo -en "\t"
+    @echo "OK."
+    @echo -en "\t"
+    echo "- modules/schema/nav.adoc" >> artifacts/documentation/antora.yml
+    echo 
+    @echo -e "Generated documentation files at: artifacts/documentation"
+    @echo
+
+# Clean up the output directory
+[group("generation")]
+clean:
+    @echo "Cleaning up generated artifacts…"
+    @echo -e "\tCleaning up: artifacts"
+    @if [ -d "artifacts" ]; then \
+        rm -rf "artifacts"; \
+    fi
+    mkdir -p "artifacts"
+    @echo "… OK."
+    @echo
+
+# Edit the information model
+[group("schema")]
+edit-schema:
+    @${VISUAL:-${EDITOR:-nano}} information_models/dp_netburen.schema.linkml.yml
+
+# Show classes in information model
+[group("schema")]
+show-schema-classes:
+    yq '.classes.* | key' information_models/dp_netburen.schema.linkml.yml
+
+# Show definition of given class
+[group("schema")]
+get-def curie:
+    yq '.classes.* | select(.class_uri == "{{curie}}")' information_models/dp_netburen.schema.linkml.yml
+
+# Release new major version
+[group("version-control")]
+release-major-version:
+    @echo "Releasing new major version…"
+    @echo -en "\t"
+    gh workflow run release_major_version.yml --ref $(git rev-parse --abbrev-ref HEAD)
+    @echo "… OK."
+    @echo
+
+# Release new minor version
+[group("version-control")]
+release-minor-version:
+    @echo "Releasing new minor version…"
+    @echo -en "\t"
+    gh workflow run release_minor_version.yml --ref $(git rev-parse --abbrev-ref HEAD)
+    @echo "… OK."
+    @echo
+
+# Release new patch version
+[group("version-control")]
+release-patch-version:
+    @echo "Releasing new patch version…"
+    @echo -en "\t"
+    gh workflow run release_patch_version.yml --ref $(git rev-parse --abbrev-ref HEAD)
+    @echo "… OK."
+    @echo
+
+# Preview version
+[group("version-control")]
+preview-version:
+    @echo "Generating preview of version…"
+    @echo -en "\t"
+    gh workflow run preview_release.yml --ref $(git rev-parse --abbrev-ref HEAD)
+    @echo "… OK."
+    @echo
