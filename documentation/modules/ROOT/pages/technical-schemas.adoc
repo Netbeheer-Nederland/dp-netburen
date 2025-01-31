@@ -12,5 +12,5 @@
 
 [source,json]
 ....
-include::attachment$schemas/json_schema/dp_netburen.json_schema.json[]
+include::schema:attachment$schemas/json_schema/dp_netburen.json_schema.json[]
 ....

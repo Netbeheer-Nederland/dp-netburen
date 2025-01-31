@@ -18,5 +18,5 @@
 
 [source,json]
 ....
-include::attachment$examples/dp_netburen.example.json[]
+include::schema:attachment$examples/dp_netburen.example.json[]
 ....
