@@ -1,6 +1,0 @@
-name: dp-netburen
-version: v0.draft
-title: Netburen
-nav:
-- modules/ROOT/nav.adoc
-- modules/schema/nav.adoc
