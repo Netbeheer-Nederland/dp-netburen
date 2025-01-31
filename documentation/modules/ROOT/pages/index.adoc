@@ -20,7 +20,7 @@ vars: {
   }
 }
 
-TopologyDataSet
+TopologyDataSet.class: dataset
 Substation.class: grid
 Bay.class: grid
 
@@ -137,6 +137,11 @@ classes: {
   market: {
     style: {
       fill: "#fffbef"
+      shadow: true
+    }
+  }
+  dataset: {
+    style: {
       shadow: true
     }
   }
