@@ -158,8 +158,8 @@ the following applies:
 * if all "overdrachtspunten" associated with the "aansluiting" are fed
 from the same `Bay`, only one `MarketEvaluationPoint` is provided;
 * if an "aansluiting" contains multiple "overdrachtspunten" which are fed
-from separate `Bay`s, the `MarketEvaluationPoint` is associated with multiple
-`Bay`s, i.e. duplicated across multiple `EnergyConsumer`s.
+from separate ``Bay``s, the `MarketEvaluationPoint` is associated with multiple
+``Bay``s, i.e. duplicated across multiple ``EnergyConsumer``s.
 
 == Additional schemas
 
