@@ -1,0 +1,22 @@
+= Examples
+
+== Main example
+
+[cols="h,3",width=65%]
+|===
+| Description
+| n/a
+
+| Format
+| JSON
+
+| Download
+| xref:schema:attachment$examples/dp_netburen.example.json[`dp_netburen.example.json`]
+|===
+
+=== Source
+
+[source,json]
+....
+include::attachment$examples/dp_netburen.example.json[]
+....
