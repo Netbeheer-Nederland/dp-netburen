@@ -1,0 +1,123 @@
+= `TownDetail`
+:toclevels: 4
+
+
++++Town details, in the context of address.+++
+
+
+[cols="h,3",width=65%]
+|===
+| Type
+| Class
+
+| URI
+| `cim:TownDetail`
+
+
+| CIM standard (perspective)
+| IEC61968 (Enterprise)
+
+
+
+|===
+
+== Class hierarchy
+* *`TownDetail`*
+
+
+== Slots
+
+
+
+
+[cols="1,1,2,1",width=100%]
+|===
+| Name | Type | Description | Inherited from
+
+| <<code,`code`>>
+//| [[slots_table.code]]<<code,`code`>>
+| 0..1 +
+https://w3id.org/linkml/String[`string`]
+| +++Town code.+++
+| _n/a_
+
+| <<state_or_province,`state_or_province`>>
+//| [[slots_table.state_or_province]]<<state_or_province,`state_or_province`>>
+| 0..1 +
+https://w3id.org/linkml/String[`string`]
+| +++Name of the state or province.+++
+| _n/a_
+|===
+
+'''
+
+
+//[discrete]
+[#code]
+=== `code`
++++Town code.+++
+
+
+[cols="h,4",width=65%]
+|===
+| URI
+| `cim:TownDetail.code`
+| Cardinality
+| 0..1
+| Type
+| https://w3id.org/linkml/String[`string`]
+
+
+|===
+
+////
+[.text-left]
+--
+<<slots_table.code,&#10548;>>
+--
+////
+
+
+//[discrete]
+[#state_or_province]
+=== `state_or_province`
++++Name of the state or province.+++
+
+
+[cols="h,4",width=65%]
+|===
+| URI
+| `cim:TownDetail.stateOrProvince`
+| Cardinality
+| 0..1
+| Type
+| https://w3id.org/linkml/String[`string`]
+
+
+|===
+
+////
+[.text-left]
+--
+<<slots_table.state_or_province,&#10548;>>
+--
+////
+
+
+
+
+
+== Used by
+
+
+[cols="1,1",width=65%]
+|===
+| Source class | Slot name
+
+
+
+| xref::class/StreetAddress.adoc[`StreetAddress`] | xref::class/StreetAddress.adoc#town_detail[`town_detail`]
+
+
+|===
+

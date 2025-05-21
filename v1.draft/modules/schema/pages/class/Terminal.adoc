@@ -1,0 +1,331 @@
+= `Terminal`
+:toclevels: 4
+
+
++++An AC electrical connection point to a piece of conducting equipment. Terminals are connected at physical connection points called connectivity nodes.+++
+
+
+[cols="h,3",width=65%]
+|===
+| Type
+| Class
+
+| URI
+| `cim:Terminal`
+
+
+| CIM standard (perspective)
+| IEC61970 (Grid)
+
+
+
+|===
+
+== Class hierarchy
+* xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
+** xref::class/ACDCTerminal.adoc[`ACDCTerminal`]
+*** *`Terminal`*
+
+
+== Slots
+
+
+
+.Associated classes
+[d2,svg,theme=4]
+----
+vars: {
+  d2-config: {
+    pad: 20
+  }
+}
+Terminal {
+  style {
+    fill: "#eccfcb"
+    shadow: true
+  }
+}
+
+
+
+ConductingEquipment {
+  style {
+    fill: "#eccfcb"
+    shadow: true
+  }
+}
+
+
+
+Name {
+  style {
+    fill: "#eccfcb"
+    shadow: true
+  }
+}
+
+
+
+
+Terminal -> ConductingEquipment: conducting_equipment
+
+
+Terminal -> Name: names
+
+
+legend: "" {
+  style: {
+    fill: transparent
+    stroke: transparent
+  }
+  grid-rows: 3
+  grid-columns: 2
+  grid-gap: 10
+  near: bottom-right
+  iec61968_color: "" {
+    style: {
+      fill: "#d1e7c2"
+      stroke: black
+      stroke-width: 1
+    }
+    width: 10
+    height: 10
+  }
+  iec61968_text: "IEC61968 (Enterprise)" {
+    shape: text
+  }
+  iec61970_color: "" {
+    style: {
+      fill: "#eccfcb"
+      stroke: black
+      stroke-width: 1
+    }
+    width: 10
+    height: 10
+  }
+  iec61970_text: "IEC61970 (Grid)" {
+    shape: text
+  }
+  iec62325_color: "" {
+    style: {
+      fill: "#fffbef"
+      stroke: black
+      stroke-width: 1
+    }
+    width: 10
+    height: 10
+  }
+  iec62325_text: "IEC62325 (Market)" {
+    shape: text
+  }
+}
+----
+
+
+[cols="1,1,2,1",width=100%]
+|===
+| Name | Type | Description | Inherited from
+
+| <<conducting_equipment,`conducting_equipment`>>
+//| [[slots_table.conducting_equipment]]<<conducting_equipment,`conducting_equipment`>>
+| 1 +
+xref::class/ConductingEquipment.adoc[`ConductingEquipment`]
+| +++The conducting equipment of the terminal.  Conducting equipment have  terminals that may be connected to other conducting...+++
+| _n/a_
+
+| <<sequence_number,`sequence_number`>>
+//| [[slots_table.sequence_number]]<<sequence_number,`sequence_number`>>
+| 1 +
+https://w3id.org/linkml/Integer[`integer`]
+| +++The orientation of the terminal connections for a multiple terminal conducting equipment. The sequence numbering starts with...+++
+| xref::class/ACDCTerminal.adoc[`ACDCTerminal`]
+
+| <<description,`description`>>
+//| [[slots_table.description]]<<description,`description`>>
+| 0..1 +
+https://w3id.org/linkml/String[`string`]
+| +++The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to...+++
+| xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
+
+| <<m_rid,`m_rid`>>
+//| [[slots_table.m_rid]]<<m_rid,`m_rid`>>
+| 0..1 +
+https://w3id.org/linkml/String[`string`]
+| +++Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is...+++
+| xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
+
+| <<names,`names`>>
+//| [[slots_table.names]]<<names,`names`>>
+| 0..* +
+xref::class/Name.adoc[`Name`]
+| +++All names of this identified object.+++
+| xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
+|===
+
+'''
+
+
+//[discrete]
+[#conducting_equipment]
+=== `conducting_equipment`
++++The conducting equipment of the terminal.  Conducting equipment have  terminals that may be connected to other conducting equipment terminals via connectivity nodes or topological nodes.+++
+
+
+[cols="h,4",width=65%]
+|===
+| URI
+| `cim:Terminal.ConductingEquipment`
+| Cardinality
+| 1
+| Type
+| xref::class/ConductingEquipment.adoc[`ConductingEquipment`]
+
+
+|===
+
+////
+[.text-left]
+--
+<<slots_table.conducting_equipment,&#10548;>>
+--
+////
+
+
+//[discrete]
+[#description]
+=== `description`
++++The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.+++
+
+
+[cols="h,4",width=65%]
+|===
+| URI
+| `cim:IdentifiedObject.description`
+| Cardinality
+| 0..1
+| Type
+| https://w3id.org/linkml/String[`string`]
+
+| Inherited from
+| xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
+
+
+|===
+
+////
+[.text-left]
+--
+<<slots_table.description,&#10548;>>
+--
+////
+
+
+//[discrete]
+[#m_rid]
+=== `m_rid`
++++Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.
+For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.+++
+
+
+[cols="h,4",width=65%]
+|===
+| URI
+| `cim:IdentifiedObject.mRID`
+| Cardinality
+| 0..1
+| Type
+| https://w3id.org/linkml/String[`string`]
+
+| Inherited from
+| xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
+
+
+|===
+
+////
+[.text-left]
+--
+<<slots_table.m_rid,&#10548;>>
+--
+////
+
+
+//[discrete]
+[#names]
+=== `names`
++++All names of this identified object.+++
+
+
+[cols="h,4",width=65%]
+|===
+| URI
+| `cim:IdentifiedObject.Names`
+| Cardinality
+| 0..*
+| Type
+| xref::class/Name.adoc[`Name`]
+
+| Inherited from
+| xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
+
+
+|===
+
+////
+[.text-left]
+--
+<<slots_table.names,&#10548;>>
+--
+////
+
+
+//[discrete]
+[#sequence_number]
+=== `sequence_number`
++++The orientation of the terminal connections for a multiple terminal conducting equipment. The sequence numbering starts with 1 and additional terminals should follow in increasing order.   The first terminal is the "starting point" for a two terminal branch.+++
+
+
+[cols="h,4",width=65%]
+|===
+| URI
+| `cim:ACDCTerminal.sequenceNumber`
+| Cardinality
+| 1
+| Type
+| https://w3id.org/linkml/Integer[`integer`]
+
+| Inherited from
+| xref::class/ACDCTerminal.adoc[`ACDCTerminal`]
+
+
+|===
+
+////
+[.text-left]
+--
+<<slots_table.sequence_number,&#10548;>>
+--
+////
+
+
+
+
+
+== Used by
+
+
+[cols="1,1",width=65%]
+|===
+| Source class | Slot name
+
+
+
+| xref::class/NetburenDataSet.adoc[`NetburenDataSet`] | xref::class/NetburenDataSet.adoc#terminals[`terminals`]
+
+
+
+| xref::class/TopologicalNode.adoc[`TopologicalNode`] | xref::class/TopologicalNode.adoc#terminal[`terminal`]
+
+
+|===
+
