@@ -166,7 +166,7 @@ from the same `Bay`, only one `MarketEvaluationPoint` is provided;
 from separate ``Bay``s, the `MarketEvaluationPoint` is associated with multiple
 ``Bay``s, i.e. duplicated across multiple ``EnergyConsumer``s.
 
-== Additional schemas
+== Additional artifacts
 
 * xref:schema:attachment$schemas/json_schema/dp_netburen.json_schema.json[JSON schema]
 * xref:schema:attachment$examples/dp_netburen.example.json[Example JSON instance data]
