@@ -1,0 +1,950 @@
+= `NetburenDataSet`
+:toclevels: 4
+
+
++++A single instance of a published dataset.+++
+
+
+[cols="h,3",width=65%]
+|===
+| Type
+| Class
+
+| URI
+| `this:NetburenDataSet`
+
+
+
+
+|===
+
+== Class hierarchy
+* *`NetburenDataSet`*
+
+
+== Slots
+
+
+
+.Associated classes
+[d2,svg,theme=4]
+----
+vars: {
+  d2-config: {
+    pad: 20
+  }
+}
+NetburenDataSet {
+  style {
+    fill: "#cccccc"
+    shadow: true
+  }
+}
+
+
+
+GeographicalRegion {
+  style {
+    fill: "#eccfcb"
+    shadow: true
+  }
+}
+
+
+
+SubGeographicalRegion {
+  style {
+    fill: "#eccfcb"
+    shadow: true
+  }
+}
+
+
+
+Substation {
+  style {
+    fill: "#eccfcb"
+    shadow: true
+  }
+}
+
+
+
+Bay {
+  style {
+    fill: "#eccfcb"
+    shadow: true
+  }
+}
+
+
+
+OperationalLimitSet {
+  style {
+    fill: "#eccfcb"
+    shadow: true
+  }
+}
+
+
+
+UsagePointLocation {
+  style {
+    fill: "#d1e7c2"
+    shadow: true
+  }
+}
+
+
+
+TopologicalNode {
+  style {
+    fill: "#eccfcb"
+    shadow: true
+  }
+}
+
+
+
+Terminal {
+  style {
+    fill: "#eccfcb"
+    shadow: true
+  }
+}
+
+
+
+Analog {
+  style {
+    fill: "#eccfcb"
+    shadow: true
+  }
+}
+
+
+
+ACLineSegment {
+  style {
+    fill: "#eccfcb"
+    shadow: true
+  }
+}
+
+
+
+ActivePowerLimit {
+  style {
+    fill: "#eccfcb"
+    shadow: true
+  }
+}
+
+
+
+EnergyConsumer {
+  style {
+    fill: "#eccfcb"
+    shadow: true
+  }
+}
+
+
+
+MarketEvaluationPoint {
+  style {
+    fill: "#fffbef"
+    shadow: true
+  }
+}
+
+
+
+CoordinateSystem {
+  style {
+    fill: "#d1e7c2"
+    shadow: true
+  }
+}
+
+
+
+PositionPoint {
+  style {
+    fill: "#d1e7c2"
+    shadow: true
+  }
+}
+
+
+
+
+NetburenDataSet -> GeographicalRegion: geographical_regions
+
+
+NetburenDataSet -> SubGeographicalRegion: sub_geographical_regions
+
+
+NetburenDataSet -> Substation: substations
+
+
+NetburenDataSet -> Bay: bays
+
+
+NetburenDataSet -> OperationalLimitSet: operational_limit_sets
+
+
+NetburenDataSet -> UsagePointLocation: usage_point_locations
+
+
+NetburenDataSet -> TopologicalNode: topological_nodes
+
+
+NetburenDataSet -> Terminal: terminals
+
+
+NetburenDataSet -> Analog: analogs
+
+
+NetburenDataSet -> ACLineSegment: ac_line_segments
+
+
+NetburenDataSet -> ActivePowerLimit: active_power_limits
+
+
+NetburenDataSet -> EnergyConsumer: energy_consumers
+
+
+NetburenDataSet -> MarketEvaluationPoint: market_evaluation_points
+
+
+NetburenDataSet -> CoordinateSystem: coordinate_systems
+
+
+NetburenDataSet -> PositionPoint: position_points
+
+
+legend: "" {
+  style: {
+    fill: transparent
+    stroke: transparent
+  }
+  grid-rows: 3
+  grid-columns: 2
+  grid-gap: 10
+  near: bottom-right
+  iec61968_color: "" {
+    style: {
+      fill: "#d1e7c2"
+      stroke: black
+      stroke-width: 1
+    }
+    width: 10
+    height: 10
+  }
+  iec61968_text: "IEC61968 (Enterprise)" {
+    shape: text
+  }
+  iec61970_color: "" {
+    style: {
+      fill: "#eccfcb"
+      stroke: black
+      stroke-width: 1
+    }
+    width: 10
+    height: 10
+  }
+  iec61970_text: "IEC61970 (Grid)" {
+    shape: text
+  }
+  iec62325_color: "" {
+    style: {
+      fill: "#fffbef"
+      stroke: black
+      stroke-width: 1
+    }
+    width: 10
+    height: 10
+  }
+  iec62325_text: "IEC62325 (Market)" {
+    shape: text
+  }
+}
+----
+
+
+[cols="1,1,2,1",width=100%]
+|===
+| Name | Type | Description | Inherited from
+
+| <<ac_line_segments,`ac_line_segments`>>
+//| [[slots_table.ac_line_segments]]<<ac_line_segments,`ac_line_segments`>>
+| 1..* +
+xref::class/ACLineSegment.adoc[`ACLineSegment`]
+| +++All instances of ACLineSegments+++
+| _n/a_
+
+| <<active_power_limits,`active_power_limits`>>
+//| [[slots_table.active_power_limits]]<<active_power_limits,`active_power_limits`>>
+| 1..* +
+xref::class/ActivePowerLimit.adoc[`ActivePowerLimit`]
+| +++All instances of ActivePowerLimits+++
+| _n/a_
+
+| <<analogs,`analogs`>>
+//| [[slots_table.analogs]]<<analogs,`analogs`>>
+| 1..* +
+xref::class/Analog.adoc[`Analog`]
+| +++All instances of Analogs+++
+| _n/a_
+
+| <<bays,`bays`>>
+//| [[slots_table.bays]]<<bays,`bays`>>
+| 1..* +
+xref::class/Bay.adoc[`Bay`]
+| +++All instances of Bays+++
+| _n/a_
+
+| <<conforms_to,`conforms_to`>>
+//| [[slots_table.conforms_to]]<<conforms_to,`conforms_to`>>
+| 1 +
+https://w3id.org/linkml/String[`string`]
+| _n/a_
+| _n/a_
+
+| <<contact_point,`contact_point`>>
+//| [[slots_table.contact_point]]<<contact_point,`contact_point`>>
+| 1 +
+https://w3id.org/linkml/String[`string`]
+| _n/a_
+| _n/a_
+
+| <<coordinate_systems,`coordinate_systems`>>
+//| [[slots_table.coordinate_systems]]<<coordinate_systems,`coordinate_systems`>>
+| 1..* +
+xref::class/CoordinateSystem.adoc[`CoordinateSystem`]
+| +++All instances of CoordinateSystems+++
+| _n/a_
+
+| <<energy_consumers,`energy_consumers`>>
+//| [[slots_table.energy_consumers]]<<energy_consumers,`energy_consumers`>>
+| 1..* +
+xref::class/EnergyConsumer.adoc[`EnergyConsumer`]
+| +++All instances of EnergyConsumers+++
+| _n/a_
+
+| <<geographical_regions,`geographical_regions`>>
+//| [[slots_table.geographical_regions]]<<geographical_regions,`geographical_regions`>>
+| 1..* +
+xref::class/GeographicalRegion.adoc[`GeographicalRegion`]
+| +++All instances of GeographicalRegions+++
+| _n/a_
+
+| <<identifier,`identifier`>>
+//| [[slots_table.identifier]]<<identifier,`identifier`>>
+| 1 +
+https://w3id.org/linkml/String[`string`]
+| _n/a_
+| _n/a_
+
+| <<market_evaluation_points,`market_evaluation_points`>>
+//| [[slots_table.market_evaluation_points]]<<market_evaluation_points,`market_evaluation_points`>>
+| 1..* +
+xref::class/MarketEvaluationPoint.adoc[`MarketEvaluationPoint`]
+| +++All instances of MarketEvaluationPoints+++
+| _n/a_
+
+| <<operational_limit_sets,`operational_limit_sets`>>
+//| [[slots_table.operational_limit_sets]]<<operational_limit_sets,`operational_limit_sets`>>
+| 1..* +
+xref::class/OperationalLimitSet.adoc[`OperationalLimitSet`]
+| +++All instances of OperationalLimitSets+++
+| _n/a_
+
+| <<position_points,`position_points`>>
+//| [[slots_table.position_points]]<<position_points,`position_points`>>
+| 1..* +
+xref::class/PositionPoint.adoc[`PositionPoint`]
+| +++All instances of PositionPoints+++
+| _n/a_
+
+| <<release_date,`release_date`>>
+//| [[slots_table.release_date]]<<release_date,`release_date`>>
+| 1 +
+https://w3id.org/linkml/String[`string`]
+| _n/a_
+| _n/a_
+
+| <<sub_geographical_regions,`sub_geographical_regions`>>
+//| [[slots_table.sub_geographical_regions]]<<sub_geographical_regions,`sub_geographical_regions`>>
+| 1..* +
+xref::class/SubGeographicalRegion.adoc[`SubGeographicalRegion`]
+| +++All instances of SubGeographicalRegions+++
+| _n/a_
+
+| <<substations,`substations`>>
+//| [[slots_table.substations]]<<substations,`substations`>>
+| 1..* +
+xref::class/Substation.adoc[`Substation`]
+| +++All instances of Substations+++
+| _n/a_
+
+| <<terminals,`terminals`>>
+//| [[slots_table.terminals]]<<terminals,`terminals`>>
+| 1..* +
+xref::class/Terminal.adoc[`Terminal`]
+| +++All instances of Terminals+++
+| _n/a_
+
+| <<topological_nodes,`topological_nodes`>>
+//| [[slots_table.topological_nodes]]<<topological_nodes,`topological_nodes`>>
+| 1..* +
+xref::class/TopologicalNode.adoc[`TopologicalNode`]
+| +++All instances of TopologicalNodes+++
+| _n/a_
+
+| <<usage_point_locations,`usage_point_locations`>>
+//| [[slots_table.usage_point_locations]]<<usage_point_locations,`usage_point_locations`>>
+| 1..* +
+xref::class/UsagePointLocation.adoc[`UsagePointLocation`]
+| +++All instances of UsagePointLocations+++
+| _n/a_
+
+| <<version,`version`>>
+//| [[slots_table.version]]<<version,`version`>>
+| 1 +
+https://w3id.org/linkml/String[`string`]
+| _n/a_
+| _n/a_
+|===
+
+'''
+
+
+//[discrete]
+[#ac_line_segments]
+=== `ac_line_segments`
++++All instances of ACLineSegments+++
+
+
+[cols="h,4",width=65%]
+|===
+| URI
+| `this:NetburenDataSet.aCLineSegments`
+| Cardinality
+| 1..*
+| Type
+| xref::class/ACLineSegment.adoc[`ACLineSegment`]
+
+
+|===
+
+////
+[.text-left]
+--
+<<slots_table.ac_line_segments,&#10548;>>
+--
+////
+
+
+//[discrete]
+[#active_power_limits]
+=== `active_power_limits`
++++All instances of ActivePowerLimits+++
+
+
+[cols="h,4",width=65%]
+|===
+| URI
+| `this:NetburenDataSet.activePowerLimits`
+| Cardinality
+| 1..*
+| Type
+| xref::class/ActivePowerLimit.adoc[`ActivePowerLimit`]
+
+
+|===
+
+////
+[.text-left]
+--
+<<slots_table.active_power_limits,&#10548;>>
+--
+////
+
+
+//[discrete]
+[#analogs]
+=== `analogs`
++++All instances of Analogs+++
+
+
+[cols="h,4",width=65%]
+|===
+| URI
+| `this:NetburenDataSet.analogs`
+| Cardinality
+| 1..*
+| Type
+| xref::class/Analog.adoc[`Analog`]
+
+
+|===
+
+////
+[.text-left]
+--
+<<slots_table.analogs,&#10548;>>
+--
+////
+
+
+//[discrete]
+[#bays]
+=== `bays`
++++All instances of Bays+++
+
+
+[cols="h,4",width=65%]
+|===
+| URI
+| `this:NetburenDataSet.bays`
+| Cardinality
+| 1..*
+| Type
+| xref::class/Bay.adoc[`Bay`]
+
+
+|===
+
+////
+[.text-left]
+--
+<<slots_table.bays,&#10548;>>
+--
+////
+
+
+//[discrete]
+[#conforms_to]
+=== `conforms_to`
+
+
+
+[cols="h,4",width=65%]
+|===
+| URI
+| http://purl.org/dc/terms/conformsTo[`dct:conformsTo`]
+| Cardinality
+| 1
+| Type
+| https://w3id.org/linkml/String[`string`]
+
+
+|===
+
+////
+[.text-left]
+--
+<<slots_table.conforms_to,&#10548;>>
+--
+////
+
+
+//[discrete]
+[#contact_point]
+=== `contact_point`
+
+
+
+[cols="h,4",width=65%]
+|===
+| URI
+| http://purl.org/dc/terms/contactPoint[`dct:contactPoint`]
+| Cardinality
+| 1
+| Type
+| https://w3id.org/linkml/String[`string`]
+
+
+|===
+
+////
+[.text-left]
+--
+<<slots_table.contact_point,&#10548;>>
+--
+////
+
+
+//[discrete]
+[#coordinate_systems]
+=== `coordinate_systems`
++++All instances of CoordinateSystems+++
+
+
+[cols="h,4",width=65%]
+|===
+| URI
+| `this:NetburenDataSet.coordinateSystems`
+| Cardinality
+| 1..*
+| Type
+| xref::class/CoordinateSystem.adoc[`CoordinateSystem`]
+
+
+|===
+
+////
+[.text-left]
+--
+<<slots_table.coordinate_systems,&#10548;>>
+--
+////
+
+
+//[discrete]
+[#energy_consumers]
+=== `energy_consumers`
++++All instances of EnergyConsumers+++
+
+
+[cols="h,4",width=65%]
+|===
+| URI
+| `this:NetburenDataSet.energyConsumers`
+| Cardinality
+| 1..*
+| Type
+| xref::class/EnergyConsumer.adoc[`EnergyConsumer`]
+
+
+|===
+
+////
+[.text-left]
+--
+<<slots_table.energy_consumers,&#10548;>>
+--
+////
+
+
+//[discrete]
+[#geographical_regions]
+=== `geographical_regions`
++++All instances of GeographicalRegions+++
+
+
+[cols="h,4",width=65%]
+|===
+| URI
+| `this:NetburenDataSet.geographicalRegions`
+| Cardinality
+| 1..*
+| Type
+| xref::class/GeographicalRegion.adoc[`GeographicalRegion`]
+
+
+|===
+
+////
+[.text-left]
+--
+<<slots_table.geographical_regions,&#10548;>>
+--
+////
+
+
+//[discrete]
+[#identifier]
+=== `identifier`
+
+
+
+[cols="h,4",width=65%]
+|===
+| URI
+| http://purl.org/dc/terms/identifier[`dct:identifier`]
+| Cardinality
+| 1
+| Type
+| https://w3id.org/linkml/String[`string`]
+
+
+|===
+
+////
+[.text-left]
+--
+<<slots_table.identifier,&#10548;>>
+--
+////
+
+
+//[discrete]
+[#market_evaluation_points]
+=== `market_evaluation_points`
++++All instances of MarketEvaluationPoints+++
+
+
+[cols="h,4",width=65%]
+|===
+| URI
+| `this:NetburenDataSet.marketEvaluationPoints`
+| Cardinality
+| 1..*
+| Type
+| xref::class/MarketEvaluationPoint.adoc[`MarketEvaluationPoint`]
+
+
+|===
+
+////
+[.text-left]
+--
+<<slots_table.market_evaluation_points,&#10548;>>
+--
+////
+
+
+//[discrete]
+[#operational_limit_sets]
+=== `operational_limit_sets`
++++All instances of OperationalLimitSets+++
+
+
+[cols="h,4",width=65%]
+|===
+| URI
+| `this:NetburenDataSet.operationalLimitSets`
+| Cardinality
+| 1..*
+| Type
+| xref::class/OperationalLimitSet.adoc[`OperationalLimitSet`]
+
+
+|===
+
+////
+[.text-left]
+--
+<<slots_table.operational_limit_sets,&#10548;>>
+--
+////
+
+
+//[discrete]
+[#position_points]
+=== `position_points`
++++All instances of PositionPoints+++
+
+
+[cols="h,4",width=65%]
+|===
+| URI
+| `this:NetburenDataSet.positionPoints`
+| Cardinality
+| 1..*
+| Type
+| xref::class/PositionPoint.adoc[`PositionPoint`]
+
+
+|===
+
+////
+[.text-left]
+--
+<<slots_table.position_points,&#10548;>>
+--
+////
+
+
+//[discrete]
+[#release_date]
+=== `release_date`
+
+
+
+[cols="h,4",width=65%]
+|===
+| URI
+| http://purl.org/dc/terms/issued[`dct:issued`]
+| Cardinality
+| 1
+| Type
+| https://w3id.org/linkml/String[`string`]
+
+
+|===
+
+////
+[.text-left]
+--
+<<slots_table.release_date,&#10548;>>
+--
+////
+
+
+//[discrete]
+[#sub_geographical_regions]
+=== `sub_geographical_regions`
++++All instances of SubGeographicalRegions+++
+
+
+[cols="h,4",width=65%]
+|===
+| URI
+| `this:NetburenDataSet.subGeographicalRegions`
+| Cardinality
+| 1..*
+| Type
+| xref::class/SubGeographicalRegion.adoc[`SubGeographicalRegion`]
+
+
+|===
+
+////
+[.text-left]
+--
+<<slots_table.sub_geographical_regions,&#10548;>>
+--
+////
+
+
+//[discrete]
+[#substations]
+=== `substations`
++++All instances of Substations+++
+
+
+[cols="h,4",width=65%]
+|===
+| URI
+| `this:NetburenDataSet.substations`
+| Cardinality
+| 1..*
+| Type
+| xref::class/Substation.adoc[`Substation`]
+
+
+|===
+
+////
+[.text-left]
+--
+<<slots_table.substations,&#10548;>>
+--
+////
+
+
+//[discrete]
+[#terminals]
+=== `terminals`
++++All instances of Terminals+++
+
+
+[cols="h,4",width=65%]
+|===
+| URI
+| `this:NetburenDataSet.terminals`
+| Cardinality
+| 1..*
+| Type
+| xref::class/Terminal.adoc[`Terminal`]
+
+
+|===
+
+////
+[.text-left]
+--
+<<slots_table.terminals,&#10548;>>
+--
+////
+
+
+//[discrete]
+[#topological_nodes]
+=== `topological_nodes`
++++All instances of TopologicalNodes+++
+
+
+[cols="h,4",width=65%]
+|===
+| URI
+| `this:NetburenDataSet.topologicalNodes`
+| Cardinality
+| 1..*
+| Type
+| xref::class/TopologicalNode.adoc[`TopologicalNode`]
+
+
+|===
+
+////
+[.text-left]
+--
+<<slots_table.topological_nodes,&#10548;>>
+--
+////
+
+
+//[discrete]
+[#usage_point_locations]
+=== `usage_point_locations`
++++All instances of UsagePointLocations+++
+
+
+[cols="h,4",width=65%]
+|===
+| URI
+| `this:NetburenDataSet.usagePointLocations`
+| Cardinality
+| 1..*
+| Type
+| xref::class/UsagePointLocation.adoc[`UsagePointLocation`]
+
+
+|===
+
+////
+[.text-left]
+--
+<<slots_table.usage_point_locations,&#10548;>>
+--
+////
+
+
+//[discrete]
+[#version]
+=== `version`
+
+
+
+[cols="h,4",width=65%]
+|===
+| URI
+| http://www.w3.org/2002/07/owl#versionInfo[`owl:versionInfo`]
+| Cardinality
+| 1
+| Type
+| https://w3id.org/linkml/String[`string`]
+
+
+|===
+
+////
+[.text-left]
+--
+<<slots_table.version,&#10548;>>
+--
+////
+
+
+
+
+
+== Used by
+
+
+This class is not used by any other classes as the range of a slot.
