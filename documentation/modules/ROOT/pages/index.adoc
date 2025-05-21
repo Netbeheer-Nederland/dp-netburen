@@ -8,64 +8,48 @@ along with a number of optional properties and data types.
 .Data Product
 [d2,svg,theme=4]
 ----
-grid-rows: 3
-grid-columns: 3
-
-horizontal-gap: 160
-vertical-gap: 80
-
 vars: {
   d2-config: {
+    layout-engine: elk
     pad: 20
   }
 }
 
-TopologyDataSet.class: dataset
+GeographicalRegion.class: enterprise
+SubGeographicalRegion.class: enterprise
 Substation.class: grid
 Bay.class: grid
-
-1.class: empty
+TopologicalNode.class: grid
+Analog.class: grid
+OperationalLimitSet.class: grid
+ActivePowerLimit.class: grid
+ACLineSegment.class: grid
 Location.class: enterprise
 EnergyConsumer.class: grid
-
-2.class: empty
-3.class: empty
 MarketEvaluationPoint.class: market
+UsagePointLocation.class: enterprise
 
-TopologyDataSet -> Substation: "substations"
-Substation -> Bay: "bays"
-Bay -> EnergyConsumer: "energy_consumers"
-EnergyConsumer -> MarketEvaluationPoint: "market_evaluation_points"
-EnergyConsumer -> Location: "location"
-Substation -> Location: "location"
-
-classes: {
-  empty: {
-    label: ""
-    style: {
-      fill: transparent
-      stroke: transparent
-    }
-  }
-  grid: {
-    style: {
-      fill: "#eccfcb"
-      shadow: true
-    }
-  }
-  enterprise: {
-    style: {
-      fill: "#d1e7c2"
-      shadow: true
-    }
-  }
-  market: {
-    style: {
-      fill: "#fffbef"
-      shadow: true
-    }
-  }
+GeographicalRegion <- SubGeographicalRegion
+SubGeographicalRegion <- Substation
+Substation <- Bay
+Substation <- Location
+Bay <- TopologicalNode
+TopologicalNode <-> ACLineSegment: {
+  source-arrowhead.shape: circle
 }
+TopologicalNode <-> Analog: {
+  source-arrowhead.shape: circle
+}
+ActivePowerLimit -> OperationalLimitSet
+OperationalLimitSet <-> ACLineSegment: {
+  source-arrowhead.shape: circle
+}
+ACLineSegment <- Location
+TopologicalNode <-> EnergyConsumer: {
+  source-arrowhead.shape: circle
+}
+EnergyConsumer <- MarketEvaluationPoint
+MarketEvaluationPoint -> UsagePointLocation
 
 legend: "" {
   style: {
