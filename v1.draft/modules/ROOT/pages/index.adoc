@@ -10,46 +10,72 @@ along with a number of optional properties and data types.
 ----
 vars: {
   d2-config: {
-    layout-engine: elk
     pad: 20
   }
 }
 
+grid-rows: 10
+grid-columns: 5
+
+horizontal-gap: 160
+vertical-gap: 160
+
+NetburenDataSet.class: dataset
 GeographicalRegion.class: enterprise
 SubGeographicalRegion.class: enterprise
 Substation.class: grid
-Bay.class: grid
-TopologicalNode.class: grid
-Analog.class: grid
-OperationalLimitSet.class: grid
-ActivePowerLimit.class: grid
-ACLineSegment.class: grid
 Location.class: enterprise
-EnergyConsumer.class: grid
-MarketEvaluationPoint.class: market
-UsagePointLocation.class: enterprise
 
-GeographicalRegion <- SubGeographicalRegion
-SubGeographicalRegion <- Substation
-Substation <- Bay
-Substation <- Location
-Bay <- TopologicalNode
+1.class: empty
+2.class: empty
+3.class: empty
+Bay.class: grid
+4.class: empty
+
+5.class: empty
+6.class: empty
+Analog.class: grid
+TopologicalNode.class: grid
+ACLineSegment.class: grid
+
+7.class: empty
+8.class: empty
+9.class: empty
+EnergyConsumer.class: grid
+OperationalLimitSet.class: grid
+
+10.class: empty
+11.class: empty
+UsagePointLocation.class: enterprise
+MarketEvaluationPoint.class: market
+ActivePowerLimit.class: grid
+
+NetburenDataSet -> GeographicalRegion: "geographical_regions"
+GeographicalRegion <- SubGeographicalRegion: "region"
+SubGeographicalRegion <- Substation: "region"
+Substation <- Bay: "substation"
+Substation <- Location: "location"
+Bay <- TopologicalNode: "connectivity_node_container"
 TopologicalNode <-> ACLineSegment: {
+  label: "conducting_equipment"
   source-arrowhead.shape: circle
 }
 TopologicalNode <-> Analog: {
+  label: "terminal"
   source-arrowhead.shape: circle
 }
-ActivePowerLimit -> OperationalLimitSet
+ActivePowerLimit -> OperationalLimitSet: "operational_limit_set"
 OperationalLimitSet <-> ACLineSegment: {
+  label: "terminal"
   source-arrowhead.shape: circle
 }
-ACLineSegment <- Location
+ACLineSegment <- Location: "location"
 TopologicalNode <-> EnergyConsumer: {
+  label: "conducting_equipment"
   source-arrowhead.shape: circle
 }
-EnergyConsumer <- MarketEvaluationPoint
-MarketEvaluationPoint -> UsagePointLocation
+EnergyConsumer <- MarketEvaluationPoint: "energy_consumers"
+MarketEvaluationPoint -> UsagePointLocation: "usage_point_location"
 
 legend: "" {
   style: {
