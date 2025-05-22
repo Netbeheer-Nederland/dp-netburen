@@ -157,7 +157,7 @@ https://w3id.org/linkml/String[`string`]
 
 | <<m_rid,`m_rid`>>
 //| [[slots_table.m_rid]]<<m_rid,`m_rid`>>
-| 0..1 +
+| 1 +
 https://w3id.org/linkml/String[`string`]
 | +++Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is...+++
 | xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
@@ -240,7 +240,7 @@ For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is map
 | URI
 | `cim:IdentifiedObject.mRID`
 | Cardinality
-| 0..1
+| 1
 | Type
 | https://w3id.org/linkml/String[`string`]
 
