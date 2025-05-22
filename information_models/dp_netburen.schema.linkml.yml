@@ -328,12 +328,6 @@ classes:
         range: NameType
         required: true
         multivalued: false
-      identified_object:
-        description: Identified object that this name designates.
-        slot_uri: cim:Name.IdentifiedObject
-        range: IdentifiedObject
-        required: true
-        multivalued: false
     class_uri: cim:Name
   NameType:
     description: "Type of name. Possible values for attribute 'name' are implementation\
@@ -367,12 +361,6 @@ classes:
         range: NameTypeAuthority
         required: false
         multivalued: false
-      names:
-        description: All names of this type.
-        slot_uri: cim:NameType.Names
-        range: Name
-        required: false
-        multivalued: true
     class_uri: cim:NameType
   NameTypeAuthority:
     description: "Authority responsible for creation and management of names of a\
@@ -391,12 +379,6 @@ classes:
         range: string
         required: false
         multivalued: false
-      name_types:
-        description: All name types managed by this authority.
-        slot_uri: cim:NameTypeAuthority.NameTypes
-        range: NameType
-        required: false
-        multivalued: true
     class_uri: cim:NameTypeAuthority
   EquipmentContainer:
     description: 'A modelling construct to provide a root class for containing equipment. '
