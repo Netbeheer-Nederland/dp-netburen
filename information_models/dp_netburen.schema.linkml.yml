@@ -302,6 +302,7 @@ classes:
         slot_uri: cim:IdentifiedObject.mRID
         range: string
         identifier: true
+        required: true
         multivalued: false
       names:
         description: All names of this identified object.
