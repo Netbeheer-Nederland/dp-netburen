@@ -56,20 +56,8 @@ NameTypeAuthority {
 
 
 
-Name {
-  style {
-    fill: "#eccfcb"
-    shadow: true
-  }
-}
-
-
-
 
 NameType -> NameTypeAuthority: name_type_authority
-
-
-NameType -> Name: names
 
 
 legend: "" {
@@ -144,13 +132,6 @@ https://w3id.org/linkml/String[`string`]
 | 0..1 +
 xref::class/NameTypeAuthority.adoc[`NameTypeAuthority`]
 | +++Authority responsible for managing names of this type.+++
-| _n/a_
-
-| <<names,`names`>>
-//| [[slots_table.names]]<<names,`names`>>
-| 0..* +
-xref::class/Name.adoc[`Name`]
-| +++All names of this type.+++
 | _n/a_
 |===
 
@@ -235,32 +216,6 @@ xref::class/Name.adoc[`Name`]
 ////
 
 
-//[discrete]
-[#names]
-=== `names`
-+++All names of this type.+++
-
-
-[cols="h,4",width=65%]
-|===
-| URI
-| `cim:NameType.Names`
-| Cardinality
-| 0..*
-| Type
-| xref::class/Name.adoc[`Name`]
-
-
-|===
-
-////
-[.text-left]
---
-<<slots_table.names,&#10548;>>
---
-////
-
-
 
 
 
@@ -274,10 +229,6 @@ xref::class/Name.adoc[`Name`]
 
 
 | xref::class/Name.adoc[`Name`] | xref::class/Name.adoc#name_type[`name_type`]
-
-
-
-| xref::class/NameTypeAuthority.adoc[`NameTypeAuthority`] | xref::class/NameTypeAuthority.adoc#name_types[`name_types`]
 
 
 |===

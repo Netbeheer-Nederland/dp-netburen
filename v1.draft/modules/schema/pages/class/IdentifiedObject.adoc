@@ -234,14 +234,4 @@ For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is map
 == Used by
 
 
-[cols="1,1",width=65%]
-|===
-| Source class | Slot name
-
-
-
-| xref::class/Name.adoc[`Name`] | xref::class/Name.adoc#identified_object[`identified_object`]
-
-
-|===
-
+This class is not used by any other classes as the range of a slot.

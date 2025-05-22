@@ -55,20 +55,8 @@ NameType {
 
 
 
-IdentifiedObject {
-  style {
-    fill: "#eccfcb"
-    shadow: true
-  }
-}
-
-
-
 
 Name -> NameType: name_type
-
-
-Name -> IdentifiedObject: identified_object
 
 
 legend: "" {
@@ -124,13 +112,6 @@ legend: "" {
 |===
 | Name | Type | Description | Inherited from
 
-| <<identified_object,`identified_object`>>
-//| [[slots_table.identified_object]]<<identified_object,`identified_object`>>
-| 1 +
-xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
-| +++Identified object that this name designates.+++
-| _n/a_
-
 | <<name,`name`>>
 //| [[slots_table.name]]<<name,`name`>>
 | 0..1 +
@@ -147,32 +128,6 @@ xref::class/NameType.adoc[`NameType`]
 |===
 
 '''
-
-
-//[discrete]
-[#identified_object]
-=== `identified_object`
-+++Identified object that this name designates.+++
-
-
-[cols="h,4",width=65%]
-|===
-| URI
-| `cim:Name.IdentifiedObject`
-| Cardinality
-| 1
-| Type
-| xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
-
-
-|===
-
-////
-[.text-left]
---
-<<slots_table.identified_object,&#10548;>>
---
-////
 
 
 //[discrete]
@@ -240,10 +195,6 @@ xref::class/NameType.adoc[`NameType`]
 
 
 | xref::class/IdentifiedObject.adoc[`IdentifiedObject`] | xref::class/IdentifiedObject.adoc#names[`names`]
-
-
-
-| xref::class/NameType.adoc[`NameType`] | xref::class/NameType.adoc#names[`names`]
 
 
 |===

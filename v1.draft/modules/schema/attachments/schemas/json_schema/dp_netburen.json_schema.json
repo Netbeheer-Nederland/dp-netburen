@@ -1024,10 +1024,6 @@
             "additionalProperties": false,
             "description": "The Name class provides the means to define any number of human readable  names for an object. A name is <b>not</b> to be used for defining inter-object relationships. For inter-object relationships instead use the object identification 'mRID'.",
             "properties": {
-                "identified_object": {
-                    "description": "Identified object that this name designates.",
-                    "type": "string"
-                },
                 "name": {
                     "description": "Any free text that name the object.\r\n",
                     "type": [
@@ -1041,8 +1037,7 @@
                 }
             },
             "required": [
-                "name_type",
-                "identified_object"
+                "name_type"
             ],
             "title": "Name",
             "type": "object"
@@ -1075,16 +1070,6 @@
                         }
                     ],
                     "description": "Authority responsible for managing names of this type."
-                },
-                "names": {
-                    "description": "All names of this type.",
-                    "items": {
-                        "$ref": "#/$defs/Name"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
                 }
             },
             "title": "NameType",
@@ -1105,16 +1090,6 @@
                     "description": "Name of the name type authority.\r\n",
                     "type": [
                         "string",
-                        "null"
-                    ]
-                },
-                "name_types": {
-                    "description": "All name types managed by this authority.",
-                    "items": {
-                        "$ref": "#/$defs/NameType"
-                    },
-                    "type": [
-                        "array",
                         "null"
                     ]
                 }
