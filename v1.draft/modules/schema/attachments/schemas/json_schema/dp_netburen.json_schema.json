@@ -305,7 +305,7 @@
         },
         "Bay": {
             "additionalProperties": false,
-            "description": "A collection of power system resources (within a given substation) including conducting equipment, protection relays, measurements, and telemetry.  A bay typically represents a physical grouping related to modularization of equipment.",
+            "description": "A collection of power system resources (within a given substation) including conducting equipment, protection relays, measurements, and telemetry. A bay typically represents a physical grouping related to modularization of equipment. System Operators that wish to add information for an MV-route can add a Name defining the MV-route.",
             "properties": {
                 "description": {
                     "description": "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.",

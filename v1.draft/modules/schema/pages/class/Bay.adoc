@@ -2,7 +2,7 @@
 :toclevels: 4
 
 
-+++A collection of power system resources (within a given substation) including conducting equipment, protection relays, measurements, and telemetry.  A bay typically represents a physical grouping related to modularization of equipment.+++
++++A collection of power system resources (within a given substation) including conducting equipment, protection relays, measurements, and telemetry. A bay typically represents a physical grouping related to modularization of equipment. System Operators that wish to add information for an MV-route can add a Name defining the MV-route.+++
 
 
 [cols="h,3",width=65%]

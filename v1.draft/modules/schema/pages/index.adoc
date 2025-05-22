@@ -25,7 +25,7 @@ The BaseVoltage at the two ends of ACLineSegments in a Line shall have the same 
 | +++AnalogValue represents an analog MeasurementValue.+++
 
 | xref::class/Bay.adoc[`Bay`]
-| +++A collection of power system resources (within a given substation) including conducting equipment, protection relays, measurements, and telemetry.  A bay typically represents a physical grouping related to modularization of equipment.+++
+| +++A collection of power system resources (within a given substation) including conducting equipment, protection relays, measurements, and telemetry. A bay typically represents a physical grouping related to modularization of equipment. System Operators that wish to add information for an MV-route can add a Name defining the MV-route.+++
 
 | xref::class/ConductingEquipment.adoc[`ConductingEquipment`]
 | +++The parts of the AC power system that are designed to carry current or that are conductively connected through terminals.+++

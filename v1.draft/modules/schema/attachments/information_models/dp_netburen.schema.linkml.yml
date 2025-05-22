@@ -265,10 +265,12 @@ classes:
         multivalued: false
     class_uri: cim:Substation
   Bay:
-    description: "A collection of power system resources (within a given substation)\
-      \ including conducting equipment, protection relays, measurements, and telemetry.\
-      \  A bay typically represents a physical grouping related to modularization\
-      \ of equipment.\r\n"
+    description: A collection of power system resources (within a given
+      substation) including conducting equipment, protection relays,
+      measurements, and telemetry. A bay typically represents a physical
+      grouping related to modularization of equipment.
+      System Operators that wish to add information for an MV-route can add a
+      Name defining the MV-route.
     from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61970.Base.Core
     is_a: EquipmentContainer
     attributes:
