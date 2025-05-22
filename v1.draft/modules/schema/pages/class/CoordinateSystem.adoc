@@ -47,15 +47,6 @@ CoordinateSystem {
 
 
 
-Location {
-  style {
-    fill: "#d1e7c2"
-    shadow: true
-  }
-}
-
-
-
 Name {
   style {
     fill: "#eccfcb"
@@ -64,9 +55,6 @@ Name {
 }
 
 
-
-
-CoordinateSystem -> Location: locations
 
 
 CoordinateSystem -> Name: names
@@ -131,13 +119,6 @@ legend: "" {
 https://w3id.org/linkml/String[`string`]
 | +++A Uniform Resource Name (URN) for the coordinate reference system (crs) used to define 'Location.PositionPoints'.
 An...+++
-| _n/a_
-
-| <<locations,`locations`>>
-//| [[slots_table.locations]]<<locations,`locations`>>
-| 0..* +
-xref::class/Location.adoc[`Location`]
-| +++All locations described with position points in this coordinate system.+++
 | _n/a_
 
 | <<description,`description`>>
@@ -218,32 +199,6 @@ A profile should limit this code to a set of allowed URNs agreed to by all sendi
 [.text-left]
 --
 <<slots_table.description,&#10548;>>
---
-////
-
-
-//[discrete]
-[#locations]
-=== `locations`
-+++All locations described with position points in this coordinate system.+++
-
-
-[cols="h,4",width=65%]
-|===
-| URI
-| `cim:CoordinateSystem.Locations`
-| Cardinality
-| 0..*
-| Type
-| xref::class/Location.adoc[`Location`]
-
-
-|===
-
-////
-[.text-left]
---
-<<slots_table.locations,&#10548;>>
 --
 ////
 

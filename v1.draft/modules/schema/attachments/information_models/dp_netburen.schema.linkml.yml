@@ -467,7 +467,7 @@ classes:
     from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61970.Base.Meas
     is_a: IdentifiedObject
     attributes:
-      Terminal:
+      terminal:
         slot_uri: cim:Measurement.Terminal
         range: ACDCTerminal
         required: true
@@ -751,7 +751,7 @@ classes:
         required: false
         multivalued: false
         description: The value to supervise.
-      Analog:
+      analog:
         slot_uri: cim:AnalogValue.Analog
         range: Analog
         required: true
@@ -767,7 +767,7 @@ classes:
       \ many state values, each representing a different source for the measurement.\r\
       \n"
     attributes:
-      timeStamp:
+      time_stamp:
         slot_uri: cim:MeasurementValue.timeStamp
         range: datetime
         required: false
@@ -931,7 +931,7 @@ classes:
     from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61970.Base.OperationalLimits
     is_a: OperationalLimit
     attributes:
-      normalValue:
+      normal_value:
         slot_uri: cim:ActivePowerLimit.normalValue
         range: ActivePower
         required: true
@@ -979,13 +979,6 @@ classes:
         range: string
         required: false
         multivalued: false
-      locations:
-        description: All locations described with position points in this coordinate
-          system.
-        slot_uri: cim:CoordinateSystem.Locations
-        range: Location
-        required: false
-        multivalued: true
     class_uri: cim:CoordinateSystem
   PositionPoint:
     description: Set of spatial coordinates that determine a point, defined in the

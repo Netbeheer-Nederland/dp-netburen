@@ -272,7 +272,7 @@ For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is map
 
 
 
-| xref::class/Measurement.adoc[`Measurement`] | xref::class/Measurement.adoc#Terminal[`Terminal`]
+| xref::class/Measurement.adoc[`Measurement`] | xref::class/Measurement.adoc#terminal[`terminal`]
 
 
 

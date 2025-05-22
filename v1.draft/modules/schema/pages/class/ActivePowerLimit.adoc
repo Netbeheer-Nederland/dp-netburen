@@ -129,8 +129,8 @@ legend: "" {
 |===
 | Name | Type | Description | Inherited from
 
-| <<normalValue,`normalValue`>>
-//| [[slots_table.normalValue]]<<normalValue,`normalValue`>>
+| <<normal_value,`normal_value`>>
+//| [[slots_table.normal_value]]<<normal_value,`normal_value`>>
 | 1 +
 xref::class/ActivePower.adoc[`ActivePower`]
 | +++The normal value of active power limit. The attribute shall be a positive value or zero.+++
@@ -257,8 +257,8 @@ For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is map
 
 
 //[discrete]
-[#normalValue]
-=== `normalValue`
+[#normal_value]
+=== `normal_value`
 +++The normal value of active power limit. The attribute shall be a positive value or zero.+++
 
 
@@ -277,7 +277,7 @@ For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is map
 ////
 [.text-left]
 --
-<<slots_table.normalValue,&#10548;>>
+<<slots_table.normal_value,&#10548;>>
 --
 ////
 

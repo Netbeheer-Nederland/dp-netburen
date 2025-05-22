@@ -115,8 +115,8 @@ legend: "" {
 |===
 | Name | Type | Description | Inherited from
 
-| <<timeStamp,`timeStamp`>>
-//| [[slots_table.timeStamp]]<<timeStamp,`timeStamp`>>
+| <<time_stamp,`time_stamp`>>
+//| [[slots_table.time_stamp]]<<time_stamp,`time_stamp`>>
 | 0..1 +
 https://w3id.org/linkml/Datetime[`datetime`]
 | +++The time when the value was last updated.+++
@@ -236,8 +236,8 @@ For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is map
 
 
 //[discrete]
-[#timeStamp]
-=== `timeStamp`
+[#time_stamp]
+=== `time_stamp`
 +++The time when the value was last updated.+++
 
 
@@ -256,7 +256,7 @@ For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is map
 ////
 [.text-left]
 --
-<<slots_table.timeStamp,&#10548;>>
+<<slots_table.time_stamp,&#10548;>>
 --
 ////
 

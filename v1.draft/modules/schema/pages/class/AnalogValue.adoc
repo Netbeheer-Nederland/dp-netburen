@@ -68,7 +68,7 @@ Name {
 
 
 
-AnalogValue -> Analog: Analog
+AnalogValue -> Analog: analog
 
 
 AnalogValue -> Name: names
@@ -127,8 +127,8 @@ legend: "" {
 |===
 | Name | Type | Description | Inherited from
 
-| <<Analog,`Analog`>>
-//| [[slots_table.Analog]]<<Analog,`Analog`>>
+| <<analog,`analog`>>
+//| [[slots_table.analog]]<<analog,`analog`>>
 | 1 +
 xref::class/Analog.adoc[`Analog`]
 | +++Measurement to which this value is connected.+++
@@ -141,8 +141,8 @@ https://w3id.org/linkml/Float[`float`]
 | +++The value to supervise.+++
 | _n/a_
 
-| <<timeStamp,`timeStamp`>>
-//| [[slots_table.timeStamp]]<<timeStamp,`timeStamp`>>
+| <<time_stamp,`time_stamp`>>
+//| [[slots_table.time_stamp]]<<time_stamp,`time_stamp`>>
 | 0..1 +
 https://w3id.org/linkml/Datetime[`datetime`]
 | +++The time when the value was last updated.+++
@@ -174,8 +174,8 @@ xref::class/Name.adoc[`Name`]
 
 
 //[discrete]
-[#Analog]
-=== `Analog`
+[#analog]
+=== `analog`
 +++Measurement to which this value is connected.+++
 
 
@@ -194,7 +194,7 @@ xref::class/Name.adoc[`Name`]
 ////
 [.text-left]
 --
-<<slots_table.Analog,&#10548;>>
+<<slots_table.analog,&#10548;>>
 --
 ////
 
@@ -288,8 +288,8 @@ For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is map
 
 
 //[discrete]
-[#timeStamp]
-=== `timeStamp`
+[#time_stamp]
+=== `time_stamp`
 +++The time when the value was last updated.+++
 
 
@@ -311,7 +311,7 @@ For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is map
 ////
 [.text-left]
 --
-<<slots_table.timeStamp,&#10548;>>
+<<slots_table.time_stamp,&#10548;>>
 --
 ////
 

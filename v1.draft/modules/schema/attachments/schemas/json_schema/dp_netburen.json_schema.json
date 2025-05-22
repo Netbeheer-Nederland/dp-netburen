@@ -172,7 +172,7 @@
                         "null"
                     ]
                 },
-                "normalValue": {
+                "normal_value": {
                     "$ref": "#/$defs/ActivePower",
                     "description": "The normal value of active power limit. The attribute shall be a positive value or zero."
                 },
@@ -182,7 +182,7 @@
                 }
             },
             "required": [
-                "normalValue",
+                "normal_value",
                 "operational_limit_set",
                 "m_rid"
             ],
@@ -193,10 +193,6 @@
             "additionalProperties": false,
             "description": "Analog represents an analog Measurement.",
             "properties": {
-                "Terminal": {
-                    "description": "One or more measurements may be associated with a terminal in the network.",
-                    "type": "string"
-                },
                 "description": {
                     "description": "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.",
                     "type": [
@@ -233,6 +229,10 @@
                     "description": "The power system resource that contains the measurement.",
                     "type": "string"
                 },
+                "terminal": {
+                    "description": "One or more measurements may be associated with a terminal in the network.",
+                    "type": "string"
+                },
                 "unit_multiplier": {
                     "$ref": "#/$defs/UnitMultiplier",
                     "description": "The unit multiplier of the measured quantity."
@@ -243,7 +243,7 @@
                 }
             },
             "required": [
-                "Terminal",
+                "terminal",
                 "measurement_type",
                 "power_system_resource",
                 "m_rid"
@@ -255,7 +255,7 @@
             "additionalProperties": false,
             "description": "AnalogValue represents an analog MeasurementValue.",
             "properties": {
-                "Analog": {
+                "analog": {
                     "$ref": "#/$defs/Analog",
                     "description": "Measurement to which this value is connected."
                 },
@@ -280,7 +280,7 @@
                         "null"
                     ]
                 },
-                "timeStamp": {
+                "time_stamp": {
                     "description": "The time when the value was last updated.",
                     "format": "date-time",
                     "type": [
@@ -297,7 +297,7 @@
                 }
             },
             "required": [
-                "Analog",
+                "analog",
                 "m_rid"
             ],
             "title": "AnalogValue",
@@ -513,16 +513,6 @@
                     "description": "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.",
                     "type": [
                         "string",
-                        "null"
-                    ]
-                },
-                "locations": {
-                    "description": "All locations described with position points in this coordinate system.",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
                         "null"
                     ]
                 },
@@ -929,10 +919,6 @@
             "additionalProperties": false,
             "description": "A Measurement represents any measured, calculated or non-measured non-calculated quantity. Any piece of equipment may contain Measurements, e.g. a substation may have temperature measurements and door open indications, a transformer may have oil temperature and tank pressure measurements, a bay may contain a number of power flow measurements and a Breaker may contain a switch status measurement. \r\nThe PSR - Measurement association is intended to capture this use of Measurement and is included in the naming hierarchy based on EquipmentContainer. The naming hierarchy typically has Measurements as leaves, e.g. Substation-VoltageLevel-Bay-Switch-Measurement.\r\nSome Measurements represent quantities related to a particular sensor location in the network, e.g. a voltage transformer (VT) or potential transformer (PT) at a busbar or a current transformer (CT) at the bar between a breaker and an isolator. The sensing position is not captured in the PSR - Measurement association. Instead it is captured by the Measurement - Terminal association that is used to define the sensing location in the network topology. The location is defined by the connection of the Terminal to ConductingEquipment. \r\nIf both a Terminal and PSR are associated, and the PSR is of type ConductingEquipment, the associated Terminal should belong to that ConductingEquipment instance.\r\nWhen the sensor location is needed both Measurement-PSR and Measurement-Terminal are used. The Measurement-Terminal association is never used alone.",
             "properties": {
-                "Terminal": {
-                    "description": "One or more measurements may be associated with a terminal in the network.",
-                    "type": "string"
-                },
                 "description": {
                     "description": "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.",
                     "type": [
@@ -962,6 +948,10 @@
                     "description": "The power system resource that contains the measurement.",
                     "type": "string"
                 },
+                "terminal": {
+                    "description": "One or more measurements may be associated with a terminal in the network.",
+                    "type": "string"
+                },
                 "unit_multiplier": {
                     "$ref": "#/$defs/UnitMultiplier",
                     "description": "The unit multiplier of the measured quantity."
@@ -972,7 +962,7 @@
                 }
             },
             "required": [
-                "Terminal",
+                "terminal",
                 "measurement_type",
                 "power_system_resource",
                 "m_rid"
@@ -1005,7 +995,7 @@
                         "null"
                     ]
                 },
-                "timeStamp": {
+                "time_stamp": {
                     "description": "The time when the value was last updated.",
                     "format": "date-time",
                     "type": [

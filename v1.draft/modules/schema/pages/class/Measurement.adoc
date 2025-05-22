@@ -80,7 +80,7 @@ Name {
 
 
 
-Measurement -> ACDCTerminal: Terminal
+Measurement -> ACDCTerminal: terminal
 
 
 Measurement -> PowerSystemResource: power_system_resource
@@ -142,13 +142,6 @@ legend: "" {
 |===
 | Name | Type | Description | Inherited from
 
-| <<Terminal,`Terminal`>>
-//| [[slots_table.Terminal]]<<Terminal,`Terminal`>>
-| 1 +
-xref::class/ACDCTerminal.adoc[`ACDCTerminal`]
-| +++One or more measurements may be associated with a terminal in the network.+++
-| _n/a_
-
 | <<measurement_type,`measurement_type`>>
 //| [[slots_table.measurement_type]]<<measurement_type,`measurement_type`>>
 | 1 +
@@ -161,6 +154,13 @@ https://w3id.org/linkml/String[`string`]
 | 1 +
 xref::class/PowerSystemResource.adoc[`PowerSystemResource`]
 | +++The power system resource that contains the measurement.+++
+| _n/a_
+
+| <<terminal,`terminal`>>
+//| [[slots_table.terminal]]<<terminal,`terminal`>>
+| 1 +
+xref::class/ACDCTerminal.adoc[`ACDCTerminal`]
+| +++One or more measurements may be associated with a terminal in the network.+++
 | _n/a_
 
 | <<unit_multiplier,`unit_multiplier`>>
@@ -343,8 +343,8 @@ For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is map
 
 
 //[discrete]
-[#Terminal]
-=== `Terminal`
+[#terminal]
+=== `terminal`
 +++One or more measurements may be associated with a terminal in the network.+++
 
 
@@ -363,7 +363,7 @@ For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is map
 ////
 [.text-left]
 --
-<<slots_table.Terminal,&#10548;>>
+<<slots_table.terminal,&#10548;>>
 --
 ////
 

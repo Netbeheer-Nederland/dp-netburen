@@ -107,7 +107,7 @@ xref::enumeration/UnitSymbol.adoc[`UnitSymbol`]
 
 
 
-| xref::class/ActivePowerLimit.adoc[`ActivePowerLimit`] | xref::class/ActivePowerLimit.adoc#normalValue[`normalValue`]
+| xref::class/ActivePowerLimit.adoc[`ActivePowerLimit`] | xref::class/ActivePowerLimit.adoc#normal_value[`normal_value`]
 
 
 |===

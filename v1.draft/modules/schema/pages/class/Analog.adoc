@@ -76,7 +76,7 @@ Name {
 
 
 
-Analog -> ACDCTerminal: Terminal
+Analog -> ACDCTerminal: terminal
 
 
 Analog -> PowerSystemResource: power_system_resource
@@ -145,13 +145,6 @@ https://w3id.org/linkml/Boolean[`boolean`]
 | +++If true then this measurement is an active power, reactive power or current with the convention that a positive value...+++
 | _n/a_
 
-| <<Terminal,`Terminal`>>
-//| [[slots_table.Terminal]]<<Terminal,`Terminal`>>
-| 1 +
-xref::class/ACDCTerminal.adoc[`ACDCTerminal`]
-| +++One or more measurements may be associated with a terminal in the network.+++
-| xref::class/Measurement.adoc[`Measurement`]
-
 | <<measurement_type,`measurement_type`>>
 //| [[slots_table.measurement_type]]<<measurement_type,`measurement_type`>>
 | 1 +
@@ -164,6 +157,13 @@ https://w3id.org/linkml/String[`string`]
 | 1 +
 xref::class/PowerSystemResource.adoc[`PowerSystemResource`]
 | +++The power system resource that contains the measurement.+++
+| xref::class/Measurement.adoc[`Measurement`]
+
+| <<terminal,`terminal`>>
+//| [[slots_table.terminal]]<<terminal,`terminal`>>
+| 1 +
+xref::class/ACDCTerminal.adoc[`ACDCTerminal`]
+| +++One or more measurements may be associated with a terminal in the network.+++
 | xref::class/Measurement.adoc[`Measurement`]
 
 | <<unit_multiplier,`unit_multiplier`>>
@@ -378,8 +378,8 @@ For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is map
 
 
 //[discrete]
-[#Terminal]
-=== `Terminal`
+[#terminal]
+=== `terminal`
 +++One or more measurements may be associated with a terminal in the network.+++
 
 
@@ -401,7 +401,7 @@ For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is map
 ////
 [.text-left]
 --
-<<slots_table.Terminal,&#10548;>>
+<<slots_table.terminal,&#10548;>>
 --
 ////
 
@@ -476,7 +476,7 @@ For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is map
 
 
 
-| xref::class/AnalogValue.adoc[`AnalogValue`] | xref::class/AnalogValue.adoc#Analog[`Analog`]
+| xref::class/AnalogValue.adoc[`AnalogValue`] | xref::class/AnalogValue.adoc#analog[`analog`]
 
 
 
