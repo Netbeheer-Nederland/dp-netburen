@@ -567,6 +567,13 @@ classes:
     description: "Street details, in the context of address.\r\n"
     from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61968.Common
     attributes:
+      address_general:
+        slot_uri: cim:StreetDetail.addressGeneral
+        range: string
+        required: false
+        multivalued: false
+        description: First line of a free form address or some additional address
+          information (for example a mail stop).
       number:
         description: Designator of the specific location on the street.
         slot_uri: cim:StreetDetail.number
@@ -584,6 +591,12 @@ classes:
         range: string
         required: false
         multivalued: false
+      name:
+        slot_uri: cim:TownDetail.name
+        range: string
+        required: false
+        multivalued: false
+        description: Town name.
       state_or_province:
         description: Name of the state or province.
         slot_uri: cim:TownDetail.stateOrProvince

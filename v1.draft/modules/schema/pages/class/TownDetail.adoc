@@ -41,6 +41,13 @@ https://w3id.org/linkml/String[`string`]
 | +++Town code.+++
 | _n/a_
 
+| <<name,`name`>>
+//| [[slots_table.name]]<<name,`name`>>
+| 0..1 +
+https://w3id.org/linkml/String[`string`]
+| +++Town name.+++
+| _n/a_
+
 | <<state_or_province,`state_or_province`>>
 //| [[slots_table.state_or_province]]<<state_or_province,`state_or_province`>>
 | 0..1 +
@@ -74,6 +81,32 @@ https://w3id.org/linkml/String[`string`]
 [.text-left]
 --
 <<slots_table.code,&#10548;>>
+--
+////
+
+
+//[discrete]
+[#name]
+=== `name`
++++Town name.+++
+
+
+[cols="h,4",width=65%]
+|===
+| URI
+| `cim:TownDetail.name`
+| Cardinality
+| 0..1
+| Type
+| https://w3id.org/linkml/String[`string`]
+
+
+|===
+
+////
+[.text-left]
+--
+<<slots_table.name,&#10548;>>
 --
 ////
 

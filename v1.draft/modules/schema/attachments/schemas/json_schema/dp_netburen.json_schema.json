@@ -1461,6 +1461,13 @@
             "additionalProperties": false,
             "description": "Street details, in the context of address.",
             "properties": {
+                "address_general": {
+                    "description": "First line of a free form address or some additional address information (for example a mail stop).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "number": {
                     "description": "Designator of the specific location on the street.",
                     "type": [
@@ -1668,6 +1675,13 @@
             "properties": {
                 "code": {
                     "description": "Town code.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "Town name.",
                     "type": [
                         "string",
                         "null"
