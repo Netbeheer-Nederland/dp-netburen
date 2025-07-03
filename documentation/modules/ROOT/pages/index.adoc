@@ -4,7 +4,6 @@ This data product for EnergyHubs describes which information and data to
 exchange between DSO and customer/advisor when establishing an EnergyHub. A
 minimum set of data is defined that all operators are expected to conform to,
 along with a number of optional properties and data types.
-
 .Data Product
 [d2,svg,theme=4]
 ----
@@ -38,34 +37,6 @@ Bay -> EnergyConsumer: "energy_consumers"
 EnergyConsumer -> MarketEvaluationPoint: "market_evaluation_points"
 EnergyConsumer -> Location: "location"
 Substation -> Location: "location"
-
-classes: {
-  empty: {
-    label: ""
-    style: {
-      fill: transparent
-      stroke: transparent
-    }
-  }
-  grid: {
-    style: {
-      fill: "#eccfcb"
-      shadow: true
-    }
-  }
-  enterprise: {
-    style: {
-      fill: "#d1e7c2"
-      shadow: true
-    }
-  }
-  market: {
-    style: {
-      fill: "#fffbef"
-      shadow: true
-    }
-  }
-}
 
 legend: "" {
   style: {
@@ -166,7 +137,7 @@ from the same `Bay`, only one `MarketEvaluationPoint` is provided;
 from separate ``Bay``s, the `MarketEvaluationPoint` is associated with multiple
 ``Bay``s, i.e. duplicated across multiple ``EnergyConsumer``s.
 
-== Additional schemas
+== Additional artifacts
 
 * xref:schema:attachment$schemas/json_schema/dp_netburen.json_schema.json[JSON schema]
 * xref:schema:attachment$examples/dp_netburen.example.json[Example JSON instance data]
