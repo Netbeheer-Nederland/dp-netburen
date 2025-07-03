@@ -1,0 +1,6 @@
+name: dp-netburen
+version: v1.stedin
+title: Netburen
+nav:
+- modules/ROOT/nav.adoc
+- modules/schema/nav.adoc
