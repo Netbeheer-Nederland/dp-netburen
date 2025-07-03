@@ -8,64 +8,74 @@ along with a number of optional properties and data types.
 .Data Product
 [d2,svg,theme=4]
 ----
-grid-rows: 3
-grid-columns: 3
-
-horizontal-gap: 160
-vertical-gap: 80
-
 vars: {
   d2-config: {
     pad: 20
   }
 }
 
-TopologyDataSet.class: dataset
+grid-rows: 10
+grid-columns: 5
+
+horizontal-gap: 160
+vertical-gap: 160
+
+NetburenDataSet.class: dataset
+GeographicalRegion.class: enterprise
+SubGeographicalRegion.class: enterprise
 Substation.class: grid
-Bay.class: grid
+Location.class: enterprise
 
 1.class: empty
-Location.class: enterprise
-EnergyConsumer.class: grid
-
 2.class: empty
 3.class: empty
+Bay.class: grid
+4.class: empty
+
+5.class: empty
+6.class: empty
+Analog.class: grid
+TopologicalNode.class: grid
+ACLineSegment.class: grid
+
+7.class: empty
+8.class: empty
+9.class: empty
+EnergyConsumer.class: grid
+OperationalLimitSet.class: grid
+
+10.class: empty
+11.class: empty
+UsagePointLocation.class: enterprise
 MarketEvaluationPoint.class: market
+ActivePowerLimit.class: grid
 
-TopologyDataSet -> Substation: "substations"
-Substation -> Bay: "bays"
-Bay -> EnergyConsumer: "energy_consumers"
-EnergyConsumer -> MarketEvaluationPoint: "market_evaluation_points"
-EnergyConsumer -> Location: "location"
-Substation -> Location: "location"
-
-classes: {
-  empty: {
-    label: ""
-    style: {
-      fill: transparent
-      stroke: transparent
-    }
-  }
-  grid: {
-    style: {
-      fill: "#eccfcb"
-      shadow: true
-    }
-  }
-  enterprise: {
-    style: {
-      fill: "#d1e7c2"
-      shadow: true
-    }
-  }
-  market: {
-    style: {
-      fill: "#fffbef"
-      shadow: true
-    }
-  }
+NetburenDataSet -> GeographicalRegion: "geographical_regions"
+GeographicalRegion <- SubGeographicalRegion: "region"
+SubGeographicalRegion <- Substation: "region"
+Substation <- Bay: "substation"
+Substation <- Location: "location"
+Bay <- TopologicalNode: "connectivity_node_container"
+TopologicalNode <-> ACLineSegment: {
+  label: "conducting_equipment"
+  source-arrowhead.shape: circle
 }
+TopologicalNode <-> Analog: {
+  label: "terminal"
+  source-arrowhead.shape: circle
+}
+ActivePowerLimit -> OperationalLimitSet: "operational_limit_set"
+OperationalLimitSet <-> ACLineSegment: {
+  label: "terminal"
+  source-arrowhead.shape: circle
+}
+ACLineSegment <- Location: "location"
+TopologicalNode <-> EnergyConsumer: {
+  label: "conducting_equipment"
+  source-arrowhead.shape: circle
+}
+EnergyConsumer <- MarketEvaluationPoint: "energy_consumers"
+MarketEvaluationPoint -> UsagePointLocation: "usage_point_location"
 
 legend: "" {
   style: {
@@ -166,7 +176,7 @@ from the same `Bay`, only one `MarketEvaluationPoint` is provided;
 from separate ``Bay``s, the `MarketEvaluationPoint` is associated with multiple
 ``Bay``s, i.e. duplicated across multiple ``EnergyConsumer``s.
 
-== Additional schemas
+== Additional artifacts
 
 * xref:schema:attachment$schemas/json_schema/dp_netburen.json_schema.json[JSON schema]
 * xref:schema:attachment$examples/dp_netburen.example.json[Example JSON instance data]
