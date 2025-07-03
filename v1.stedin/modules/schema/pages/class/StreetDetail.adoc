@@ -39,24 +39,24 @@
 | https://w3id.org/linkml/String[`string`]
 | +++Designator of the specific location on the street.+++
 
-| <<address_general,`address_general`>>
+| <<name,`name`>>
 | 0..1
 | https://w3id.org/linkml/String[`string`]
-| +++First line of a free form address or some additional address information (for example a mail stop).+++
+| +++Name of the street.+++
 |===
 
 '''
 
 
 //[discrete]
-[#address_general]
-=== `address_general`
-+++First line of a free form address or some additional address information (for example a mail stop).+++
+[#name]
+=== `name`
++++Name of the street.+++
 
 [cols="h,4",width=65%]
 |===
 | URI
-| `cim:StreetDetail.addressGeneral`
+| `cim:StreetDetail.name`
 | Cardinality
 | 0..1
 | Type

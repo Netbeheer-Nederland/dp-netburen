@@ -805,8 +805,8 @@
             "additionalProperties": false,
             "description": "Street details, in the context of address.",
             "properties": {
-                "address_general": {
-                    "description": "First line of a free form address or some additional address information (for example a mail stop).",
+                "name": {
+                    "description": "Name of the street.",
                     "type": [
                         "string",
                         "null"
