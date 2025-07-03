@@ -306,13 +306,12 @@ classes:
     description: "Street details, in the context of address.\r\n"
     from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61968.Common
     attributes:
-      address_general:
-        slot_uri: cim:StreetDetail.addressGeneral
+      name:
+        slot_uri: cim:StreetDetail.name
         range: string
         required: false
         multivalued: false
-        description: First line of a free form address or some additional address
-          information (for example a mail stop).
+        description: Name of the street.
       number:
         description: Designator of the specific location on the street.
         slot_uri: cim:StreetDetail.number

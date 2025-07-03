@@ -12,7 +12,7 @@ substations:
               main_address:
                 postal_code: '1234AB'
                 street_detail:
-                  address_general: 'Utrechtseweg'
+                  name: 'Utrechtseweg'
                   number: '23'
                 town_detail:
                   name: 'Arnhem'
