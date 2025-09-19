@@ -176,7 +176,7 @@ create-draft name:
     @echo
     @echo "Creating new draft pull request…"
     @echo
-    gh pr create --base {{shell(major_branch_name)}} --draft --editor
+    gh pr create --base {{shell(major_branch_name)}} --draft
     @echo "… OK."
     @echo
 
@@ -245,7 +245,8 @@ generate-documentation: _post-process-linkml-schema
     mkdir -p "artifacts/documentation/modules/schema"
     poetry run python -m linkml_asciidoc_generator.main \
         "artifacts/information_models/dp_netburen.schema.linkml.yml" \
-        "artifacts/documentation/modules/schema"
+        "artifacts/documentation/modules/schema" \
+        --relations-diagrams
     echo "- modules/schema/nav.adoc" >> artifacts/documentation/antora.yml
     @echo "… OK."
     @echo
